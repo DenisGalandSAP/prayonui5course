@@ -5,6 +5,17 @@
     displayBlock="true">
     <Page id="page2"
         title="{i18n>title}">
+        <content>
+            <Panel>
+                <List items="{products>/}">
+                    <items>
+                        <ObjectListItem title="{products>name}"
+                            number="{products>price}"/>
+                    </items>
+                </List>
+            </Panel>
+        </content>
+
         <!-- <content> -->
         <!-- <core:Fragment fragmentName="z.project7.view.Panel" type="XML"></core:Fragment> -->
         <!-- <Panel>

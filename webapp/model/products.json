@@ -2,7 +2,7 @@
     {
         "name": "hero Product",
         "detail": "Lorem ipsum dolor sit amet",
-        "price": "99",
+        "price": "95",
         "stock": 0,
         "hero": "OMG This just came out today!",
         "image": "http://placehold.it/940x300/999/CCC"
@@ -10,7 +10,7 @@
     {
         "name": "Product 1",
         "detail": "Lorem ipsum dolor sit amet",
-        "price": "99",
+        "price": "10",
         "stock": 5,
         "info": "This is the latest and greatest product from Derp corp.",
         "image": "http://placehold.it/300x300/999/CCC"
@@ -18,7 +18,7 @@
     {
         "name": "Product 2",
         "detail": "Lorem ipsum dolor sit amet",
-        "price": "99",
+        "price": "3",
         "stock": 15,
         "offer": "BOGOF",
         "image": "http://placehold.it/300x300/999/CCC"
