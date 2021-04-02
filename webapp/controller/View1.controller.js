@@ -61,7 +61,21 @@ sap.ui.define([
                     return "Out of stock";
                 }
 
+            },
+
+            onStockCheck: function (nStock) {
+                if (nStock > 0) {
+                    return sap.ui.core.ValueState.Success;
+                } else {
+                    return sap.ui.core.ValueState.Error;
+                }
+            },
+
+            onNavigate: function (oEvent) {
+                var nIndex = oEvent.getSource().getBindingContext("products").getPath().substring(1, 2);
+                this.getOwnerComponent().getRouter().navTo("View2", { index: nIndex });
             }
+
             //,
 
             // groupByName: function (oContext) {

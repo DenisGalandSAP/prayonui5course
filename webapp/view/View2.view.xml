@@ -1,0 +1,12 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    controllerName="z.project7.controller.View2"
+    displayBlock="true">
+    <Page id="page2"
+        title="page 2"
+        showNavButton="true"
+        navButtonPress=".onBack">
+        <Text text="{products>name}"/>
+    </Page>
+</mvc:View>
