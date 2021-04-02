@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns:core='sap.ui.core'>
+	<Panel xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" expandable="true" expanded="false"
+		headerText="This is a form panel">
+		<HBox id="hbox0" alignItems="Center" renderType="Bare">
+			<Button xmlns="sap.m" enabled="{/enableForm}" id="button1" text="{/inputValue}" icon="sap-icon://save" class="sapUiResponsiveMargin"
+				press=".onPress"/>
+			<Input id="input0" enabled="{/enableForm}" value="{/inputValue}" valueLiveUpdate="true" class="sapUiResponsiveMargin" width="70%"
+				type="Text"/>
+			<Switch type="AcceptReject" change=".onChange"/>
+		</HBox>
+	</Panel>
+</core:FragmentDefinition>
