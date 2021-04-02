@@ -18,7 +18,6 @@ sap.ui.define([
                     path: "/" + nIndex,
                     model: "products"
                 });
-                oEvent.getParameter("arguments").index
             },
 
             onBack: function () {

@@ -75,18 +75,6 @@ sap.ui.define([
                 var nIndex = oEvent.getSource().getBindingContext("products").getPath().substring(1, 2);
                 this.getOwnerComponent().getRouter().navTo("View2", { index: nIndex });
             }
-
-            //,
-
-            // groupByName: function (oContext) {
-            //     return oContext.getProperty('name');
-            // },
-
-            // getGroupHeader: function (oGroup) {
-            //     return new GroupHeaderListItem({
-            //         title: oGroup.name
-            //     }
-            //     );
-            // }
+            
         });
     });
