@@ -62,6 +62,17 @@ sap.ui.define([
                 }
 
             }
+            //,
 
+            // groupByName: function (oContext) {
+            //     return oContext.getProperty('name');
+            // },
+
+            // getGroupHeader: function (oGroup) {
+            //     return new GroupHeaderListItem({
+            //         title: oGroup.name
+            //     }
+            //     );
+            // }
         });
     });

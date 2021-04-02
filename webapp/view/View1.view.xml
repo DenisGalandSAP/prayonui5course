@@ -7,7 +7,9 @@
         title="{i18n>title}">
         <content>
             <Panel>
-                <List items="{products>/}">
+                <List items="{path : 'products>/',
+                              sorter:{path:'products>name',descending:true},
+                              filters: [{path:'name',operator:'Contains',value1:'hero'}]}">
                     <items>
                         <ObjectListItem title="{products>name}"
                             number="{products>price}"/>
