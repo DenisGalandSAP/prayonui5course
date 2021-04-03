@@ -2,12 +2,14 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageBox",
     "sap/m/MessageToast",
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
 ],
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-    function (Controller, MessageBox, MessageToast, Fragment, encodeURL) {
+    function (Controller, MessageBox, MessageToast, Fragment, Filter, FilterOperator) {
         "use strict";
 
         return Controller.extend("z.project7.controller.App", {
@@ -74,6 +76,11 @@ sap.ui.define([
             onNavigate: function (oEvent) {
                 var nIndex = oEvent.getSource().getBindingContextPath().split("/")[1];
                 this.getOwnerComponent().getRouter().navTo("View2", { index: nIndex });
+            },
+
+            onLiveChange: function (sSearchField) {
+                var oBinding = this.getView().byId("list0").getBinding("items");
+                oBinding.filter([new Filter("name", FilterOperator.Contains, sSearchField)]);
             }
 
         });

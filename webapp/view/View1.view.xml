@@ -5,27 +5,44 @@
     displayBlock="true">
     <Page id="page2"
         title="{i18n>title}">
+        <headerContent>
+            <SearchField value="{/filterValue}"
+                placeholder="Filter for list"
+                liveChange=".onLiveChange(${$parameters>/newValue})"/>
+        </headerContent>
+        <subHeader>
+            <OverflowToolbar >
+                <core:Fragment fragmentName="z.project7.view.HBox"
+                    type="XML"/>
+            </OverflowToolbar>
+        </subHeader>
         <content>
-            <Panel>
-                <List items="{path : 'products>/',
-                              sorter:{path:'name',descending:true,group:true},
-                              filters: [{path:'name',operator:'Contains',value1:'Product'}]
-                              }">
-                    <items>
-                        <ObjectListItem title="{products>name}"
-                            type="Navigation"
-                            number="{products>price}"
-                            press=".onNavigate">
-                            <firstStatus>
-                                <ObjectStatus text="{=${products>stock} > 0 ? 'In stock' : 'Out of Stock' }"
-                                    state="{path: 'products>stock',
+            <List id="list0"
+                items="{path : 'products>/',
+                            sorter:{path:'name',descending:true,group:true}}">
+                <items>
+                    <ObjectListItem title="{products>name}"
+                        type="Navigation"
+                        number="{products>price}"
+                        press=".onNavigate">
+                        <firstStatus>
+                            <ObjectStatus text="{=${products>stock} > 0 ? 'In stock' : 'Out of Stock' }"
+                                state="{path: 'products>stock',
 						                    formatter: '.onStockCheck'
 					                    }" />
-                            </firstStatus>
-                        </ObjectListItem>
-                    </items>
-                </List>
-            </Panel>
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
         </content>
+        <footer>
+            <OverflowToolbar >
+                <ToolbarSpacer/>
+                <Button text="openDialog"
+                    type="Emphasized"
+                    press="onOpenDialog"/>
+            </OverflowToolbar>
+        </footer>
+
     </Page>
 </mvc:View>
