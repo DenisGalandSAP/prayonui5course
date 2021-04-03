@@ -8,7 +8,7 @@
         <content>
             <Panel>
                 <List items="{path : 'products>/',
-                              sorter:{path:'products>name',descending:true,group:true},
+                              sorter:{path:'name',descending:true,group:true},
                               filters: [{path:'name',operator:'Contains',value1:'Product'}]
                               }">
                     <items>
