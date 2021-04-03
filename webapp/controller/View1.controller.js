@@ -72,9 +72,9 @@ sap.ui.define([
             },
 
             onNavigate: function (oEvent) {
-                var nIndex = oEvent.getSource().getBindingContext("products").getPath().substring(1, 2);
+                var nIndex = oEvent.getSource().getBindingContextPath().split("/")[1];
                 this.getOwnerComponent().getRouter().navTo("View2", { index: nIndex });
             }
-            
+
         });
     });

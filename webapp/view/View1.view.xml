@@ -8,10 +8,9 @@
         <content>
             <Panel>
                 <List items="{path : 'products>/',
-                              sorter:{path:'products>name',descending:true}
+                              sorter:{path:'products>name',descending:true,group:true},
+                              filters: [{path:'name',operator:'Contains',value1:'Product'}]
                               }">
-                    <!-- ,
-                              filters: [{path:'name',operator:'Contains',value1:'hero'}] -->
                     <items>
                         <ObjectListItem title="{products>name}"
                             type="Navigation"
@@ -20,47 +19,13 @@
                             <firstStatus>
                                 <ObjectStatus text="{=${products>stock} > 0 ? 'In stock' : 'Out of Stock' }"
                                     state="{path: 'products>stock',
-						                              formatter: '.onStockCheck'
-					                                 }" />
+						                    formatter: '.onStockCheck'
+					                    }" />
                             </firstStatus>
                         </ObjectListItem>
                     </items>
                 </List>
             </Panel>
         </content>
-
-        <!-- <content> -->
-        <!-- <core:Fragment fragmentName="z.project7.view.Panel" type="XML"></core:Fragment> -->
-        <!-- <Panel>
-                            <List items="{path:'products>/',sorter:{path: 'name', descending: false},filters: [{path:'name',operator:'Contains',value1:'hero'}]}">
-                                <items>
-                                    <ObjectListItem title="{products>name}" number="{products>price}">
-                                        <firstStatus>
-                                            <ObjectStatus text="{path:'products>stock', formatter: '.stockText'}" state="{=${products>stock} > 0 ? 'Success' : 'Error' }"/>
-                                        </firstStatus>
-                                    </ObjectListItem>
-                                </items>
-                            </List>
-                        </Panel> -->
-        <!-- <Panel>
-                            <Table items="{products>/}">
-                                <columns>
-                                    <Column>
-                                        <Text text="product name"></Text>
-                                    </Column>
-                                </columns>
-                                <items>
-                                    <ColumnListItem>
-                                        <cells>
-                                            <Text text="{products>name}"/>
-                                        </cells>
-                                    </ColumnListItem>
-                                </items>
-                            </Table>
-                        </Panel> -->
-        <!-- </content> -->
-        <!-- <headerContent>
-            <Button text="Open Dialog" id="button0" press=".onOpenDialog"/>
-        </headerContent> -->
     </Page>
 </mvc:View>
