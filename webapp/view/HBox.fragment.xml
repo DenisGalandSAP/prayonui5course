@@ -18,7 +18,7 @@
             class="sapUiResponsiveMargin"
             width="70%"
             type="Text"/>
-        <Switch type="AcceptReject"
+        <Switch type="Default"
             change=".onChange"/>
     </HBox>
 </core:FragmentDefinition>
