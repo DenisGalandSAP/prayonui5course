@@ -6,7 +6,7 @@
     <Page id="page2"
         title="page 2"
         showNavButton="true"
-        navButtonPress=".onBack">
+        navButtonPress=".onNavBack">
         <Text text="{products>name}"/>
     </Page>
 </mvc:View>

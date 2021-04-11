@@ -1,39 +1,38 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "z/project7/controller/BaseController",
     "sap/m/MessageBox",
     "sap/m/MessageToast",
     "sap/ui/core/Fragment",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
+    "sap/ui/core/ValueState"
 ],
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-    function (Controller, MessageBox, MessageToast, Fragment, Filter, FilterOperator) {
+    function (Controller, MessageBox, MessageToast, Fragment, Filter, FilterOperator, ValueState) {
         "use strict";
 
         return Controller.extend("z.project7.controller.App", {
             onInit: function () {
-                this.oI18n = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-                console.log("");
             },
 
             onPress: function () {
                 //var sValue = this.getView().byId("input0").getValue();
-                this.sMessage = this.oI18n.getText("nameconcatenated", [this.getView().getModel().getProperty("/inputValue")]);
+                var sMessage = this.getResourceBundle().getText("nameconcatenated", [this.getModel().getProperty("/inputValue")]);
                 MessageBox.show(sMessage, {
                     icon: MessageBox.Icon.QUESTION
                 });
             },
 
             onChange: function (oEvent) {
-                this.getView().getModel().setProperty("/enableForm", oEvent.getParameter("state"));
+                this.getModel().setProperty("/enableForm", oEvent.getParameter("state"));
                 if (oEvent.getParameter("state")) {
-                    MessageToast.show(this.oI18n.getText("switchOn", ["test"]), {
+                    MessageToast.show(this.getResourceBundle().getText("switchOn", ["test"]), {
                         at: sap.ui.core.Popup.Dock.CenterCenter
                     });
                 } else {
-                    MessageToast.show(this.oI18n.getText("switchOff", ["test"]), {
+                    MessageToast.show(this.getResourceBundle().getText("switchOff", ["test"]), {
                         at: sap.ui.core.Popup.Dock.CenterCenter
                     });
 
@@ -67,15 +66,15 @@ sap.ui.define([
 
             onStockCheck: function (nStock) {
                 if (nStock > 0) {
-                    return sap.ui.core.ValueState.Success;
+                    return ValueState.Success;
                 } else {
-                    return sap.ui.core.ValueState.Error;
+                    return ValueState.Error;
                 }
             },
 
             onNavigate: function (oEvent) {
                 var nIndex = oEvent.getSource().getBindingContextPath().split("/")[1];
-                this.getOwnerComponent().getRouter().navTo("View2", { index: nIndex });
+                this.navTo("View2", { index: nIndex });
             },
 
             onLiveChange: function (sSearchField) {

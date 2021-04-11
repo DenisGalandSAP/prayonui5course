@@ -1,5 +1,5 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "z/project7/controller/BaseController",
 ],
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -9,19 +9,15 @@ sap.ui.define([
 
         return Controller.extend("z.project7.controller.View2", {
             onInit: function () {
-                this.getOwnerComponent().getRouter().getRoute("View2").attachMatched(this.onAttachMatched, this);
+                this.getRouter().getRoute("View2").attachMatched(this._onAttachMatched, this);
             },
 
-            onAttachMatched: function (oEvent) {
+            _onAttachMatched: function (oEvent) {
                 var nIndex = oEvent.getParameter("arguments").index;
                 this.getView().byId("page2").bindElement({
                     path: "/" + nIndex,
                     model: "products"
                 });
-            },
-
-            onBack: function () {
-                this.getOwnerComponent().getRouter().navTo("RouteApp");
             }
 
         });
