@@ -55,13 +55,16 @@ sap.ui.define([
                 return UIComponent.getRouterFor(this);
             },
 
-            onNavBack: function (sRoutePath) {
+            onNavBack: function () {
                 var sPreviousHash = History.getInstance().getPreviousHash();
 
                 if (sPreviousHash !== undefined) {
                     window.history.back();
                 } else {
-                    this.getRouter().navTo(sRoutePath, {}, false);
+                    var sDefaultRoot = this.getOwnerComponent().getManifestEntry("sap.ui5").routing.routes.find((oRoute) => {
+                        return oRoute.pattern === ""
+                    }).name;
+                    this.getRouter().navTo(sDefaultRoot, {}, false);
                 }
             }
         });
