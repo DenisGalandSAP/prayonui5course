@@ -1,5 +1,5 @@
 sap.ui.define([
-    "z/project7/controller/BaseController",
+    "../controller/BaseController",
     "sap/m/MessageBox",
     "sap/m/MessageToast",
     "sap/ui/core/Fragment",

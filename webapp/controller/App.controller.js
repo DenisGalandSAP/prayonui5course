@@ -4,7 +4,7 @@ sap.ui.define([
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-    function (Controller, MessageBox, MessageToast, Fragment) {
+    function (Controller) {
         "use strict";
 
         return Controller.extend("z.project7.controller.App", {

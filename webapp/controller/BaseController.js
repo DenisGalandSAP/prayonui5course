@@ -9,7 +9,7 @@ sap.ui.define([
     function (Controller, UIComponent, History) {
         "use strict";
 
-        return Controller.extend("z.project7.controller.BaseController", {
+        return Controller.extend("../controller.BaseController", {
             /**
             * Convenience method for getting the view model by name in every controller of the application.
             * @public
